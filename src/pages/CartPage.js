@@ -12,7 +12,7 @@ const CartPage = () => {
   };
 
   const handleContinueShopping = () => {
-    navigate('/products');
+    navigate('/product');
   };
 
   if (cart.items.length === 0) {

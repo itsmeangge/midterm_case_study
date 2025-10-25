@@ -49,7 +49,7 @@ const CheckoutPage = () => {
         <div className="empty-checkout">
           <h2>No items in cart</h2>
           <p>Please add some items to your cart before checking out.</p>
-          <button onClick={() => navigate('/products')}>
+          <button onClick={() => navigate('/product')}>
             Continue Shopping
           </button>
         </div>
