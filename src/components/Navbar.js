@@ -68,6 +68,9 @@ const Navbar = () => {
                         </span>
                     }
                 </Link>
+                <Link to="/admin" style={linkStyle("/admin")}>
+                Admin
+                </Link>
             </div>
         </nav>
     );
