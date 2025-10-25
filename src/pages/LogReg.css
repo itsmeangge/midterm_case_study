@@ -1,0 +1,111 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background: linear-gradient(to right, #1a1a1a, #333);
+  background-size: cover;
+  padding: 20px;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.brand-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.auth-form label {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.auth-form input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border 0.3s;
+}
+
+.auth-form input:focus {
+  border-color: #111;
+  outline: none;
+}
+
+.auth-btn {
+  background-color: #111;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.auth-btn:hover {
+  background-color: #444;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.auth-link {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 30px 20px;
+  }
+
+  .brand-name {
+    font-size: 1.7rem;
+  }
+
+  .auth-title {
+    font-size: 1.3rem;
+  }
+}
