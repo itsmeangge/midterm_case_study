@@ -21,7 +21,7 @@ const Navbar = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            backgroundColor: "#655",
+            backgroundColor: "#555",
             padding: "15px 70px",
         }}>
             {/* Logo / Brand Name */}
