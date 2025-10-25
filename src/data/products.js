@@ -1,12 +1,12 @@
 import shirt1 from "../designs/shirt1.jpg";
 import shirt2 from "../designs/shirt2.jpg";
 import shirt3 from "../designs/shirt3.jpg";
-import shirt4 from "../designs/shirt4.jpg";
-import shirt5 from "../designs/shirt5.jpg";
-import shirt6 from "../designs/shirt6.jpg";
-import shirt7 from "../designs/shirt7.jpg";
-import shirt8 from "../designs/shirt8.jpg";
-import shirt9 from "../designs/shirt9.jpg";
+import shirt4 from "../designs/shirt4.jpeg";
+import shirt5 from "../designs/shirt5.jpeg";
+import shirt6 from "../designs/shirt6.jpeg";
+import shirt7 from "../designs/shirt7.jpeg";
+import shirt8 from "../designs/shirt8.jpeg";
+import shirt9 from "../designs/shirt9.jpeg";
 
 const products = [
   {
