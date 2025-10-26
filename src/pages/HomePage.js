@@ -1,5 +1,5 @@
 import React from "react";
-import homepageBg from "../assets/homepage-bg.jpg";
+import homepageBg from "../designs/HomeBackground.jpeg";
 
 const HomePage = () => {
   return (
@@ -7,7 +7,7 @@ const HomePage = () => {
       style={{
         backgroundImage: `url(${homepageBg})`,
         backgroundSize: "cover",           
-        backgroundPosition: "center top",      
+        backgroundPosition: "center top 30%",      
         backgroundRepeat: "no-repeat",     
         height: "90vh",                   
         width: "100%",                    

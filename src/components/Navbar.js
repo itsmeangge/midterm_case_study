@@ -1,86 +1,79 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useCart } from '../context/CartContext';
 import "../styles/components.css";
 
 const Navbar = () => {
-  const location = useLocation();
+    const location = useLocation();
+    const { getCartItemsCount } = useCart();
 
-  return (
-    <nav
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        background: "#555",
-        padding: "15px 70px",
-      }}
-    >
-      <div style={{ color: "white", fontSize: "2.5rem", fontWeight: "500" }}>
-        WearDistrict
-      </div>
+    const linkStyle = (path) => ({
+        fontSize: "1.5rem",
+        color: "white",
+        marginRight: "20px",
+        textDecoration: "none",
+        fontWeight: location.pathname === path ? "bold" : "normal",
+        transition: "0.3s",
+    });
 
-      <div style={{ flex: 1, textAlign: "center" }}>
-        <input
-          type="text"
-          placeholder="What are you looking for?"
-          style={{
-            width: "60%",
-            padding: "13px 25px",
-            borderRadius: "10px",
-            border: "none",
-            outline: "none",
-          }}
-        />
-      </div>
+    return (
+        <nav style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            backgroundColor: "#555",
+            padding: "15px 70px",
+        }}>
+            {/* Logo / Brand Name */}
+            <div style={{ color: "white", fontSize: "2.5rem", fontWeight: 800 }}>
+                WearDistrict
+            </div>
 
-      <div>
-        <Link
-          to="/"
-          style={{
-            fontSize: "1.5rem",
-            color: "white",
-            marginRight: "20px",
-            fontWeight: location.pathname === "/" ? "bold" : "normal",
-            textDecoration: "none",
-          }}
-        >
-          Home
-        </Link>
-        <Link
-          to="/about"
-          style={{
-            fontSize: "1.5rem",
-            color: "white",
-            marginRight: "20px",
-            textDecoration: "none",
-          }}
-        >
-          About
-        </Link>
-        <Link
-          to="/product"
-          style={{
-            fontSize: "1.5rem",
-            color: "white",
-            marginRight: "20px",
-            textDecoration: "none",
-          }}
-        >
-          Product
-        </Link>
-        <Link
-          to="/cart"
-          style={{
-            fontSize: "1.5rem",
-            color: "white",
-            textDecoration: "none",
-          }}
-        >
-          Cart
-        </Link>
-      </div>
-    </nav>
-  );
+            {/* Search Bar */}
+            <div style={{ flex: 1, textAlign: "center" }}>
+                <input
+                    type="text"
+                    placeholder="What are you looking for?"
+                    style={{
+                        width: "60%",
+                        padding: "10px 25px",
+                        borderRadius: "10px",
+                        border: "none",
+                        outline: "none",
+                    }}
+                />
+            </div>
+
+            {/* Navigation Links */}
+            <div>
+                <Link to="/" style={linkStyle("/")}>
+                    Home
+                </Link>
+                <Link to="/about" style={linkStyle("/about")}>
+                    About
+                </Link>
+                <Link to="/product" style={linkStyle("/product")}>
+                    Product
+                </Link>
+                <Link to="/cart" style={linkStyle("/cart")}>
+                    Cart {getCartItemsCount() > 0 && 
+                        <span style={{
+                            background: 'red', 
+                            borderRadius: '50%', 
+                            padding: '2px 6px', 
+                            fontSize: '0.8rem',
+                            marginLeft: '5px'
+                        }}>
+                            {getCartItemsCount()}
+                        </span>
+                    }
+                </Link>
+                <Link to="/admin" style={linkStyle("/admin")}>
+                Admin
+                </Link>
+            </div>
+        </nav>
+    );
 };
 
 export default Navbar;

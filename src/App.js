@@ -1,25 +1,39 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Homepage from "./components/Homepage";
-import ProductList from "./components/ProductList";
-import ProductDetails from "./components/ProductDetails";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import ProductList from './pages/ProductList';
+import ProductDetails from './pages/ProductDetails';
+import CartPage from './pages/CartPage';
+import CheckoutPage from './pages/CheckoutPage';
+import About from './pages/About';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Admin from './pages/Admin';
+import './styles/App.css';
 
 function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-      </Routes>
-    </Router>
-  );
+    return (
+        <CartProvider>
+            <Router>
+                <div className="App">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<HomePage />} />
+                        <Route path='about' element={<About />} />
+                        <Route path="/product" element={<ProductList />} />
+                        <Route path="/product/:id" element={<ProductDetails />} />
+                        <Route path="/cart" element={<CartPage />} />
+                        <Route path="/checkout" element={<CheckoutPage />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="/admin" element={<Admin />} />
+                    </Routes>
+                </div>
+            </Router>
+        </CartProvider>
+    );
 }
 
 export default App;
